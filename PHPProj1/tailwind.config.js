@@ -3,7 +3,7 @@ module.exports = {
     enabled: true,
     content: ['./scripts/PHP/PHPstatic/*.php', './scripts/js/*.js', './*.{php,html}'],
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
   },
