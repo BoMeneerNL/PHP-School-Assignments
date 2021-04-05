@@ -7,6 +7,10 @@ if($_GET['serve'] != "allowcookies"){
         header("location: index.php?serve=allowcookies");
     }
 }
+//if(isset($_GET['provincie'])) {
+//    setcookie("provincie",$_GET['provincie']);
+//    header("location: index");
+//}
 
 if(http_response_code() != 200){
     include_once 'errors/error' . http_response_code() . ".php";
@@ -27,13 +31,13 @@ if($_GET['handler'] == "allowedcookies"){
 }
 ?>
 <?php
-if($_GET['serve'] != "allowcookies"){
+if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "betalen" && !isset($_GET['provincie']) || !isset($_COOKIE['provincie'])){
     echo('
     <div id="item1">
     
     </div>
     <form id ="bestelfinishform" style="display: none;">
-        <select name="prov" id="">
+        <select name="provincie" id="">
             <option value="Groningen">Groningen</option>
             <option value="Friesland">Friesland/Fryslân</option>
             <option value="Drenthe">Drenthe</option>
@@ -47,12 +51,12 @@ if($_GET['serve'] != "allowcookies"){
             <option value="Noord-Brabant">Noord-Brabant</option>
             <option value="Limburg">Limburg</option>
     
-            <input type="submit" name="submit" value="betalen">
+            <input type="submit" name="serve" value="betalen">
     </form>
 ');
 }
-else{
-    include 'scripts/PHP/PHPstatic/acceptmycookies.php';
+if($_GET['serve'] == "allowcookies"){
+    include "scripts/PHP/PHPstatic/acceptmycookies.php";
 }
 ?>
 <?php
