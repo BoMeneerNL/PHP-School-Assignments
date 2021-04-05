@@ -1,0 +1,1 @@
+function formdatachecker(){}function executor(e){0==e&&(document.getElementById("bestelfinishform").style.display="initial"),1==e&&(Cookies.set("Allowed","allowed"),location.href="index")}
