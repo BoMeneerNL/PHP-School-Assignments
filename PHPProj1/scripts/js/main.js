@@ -6,6 +6,10 @@ function executor(action){
         document.getElementById("bestelfinishform").style.display = "initial";
     }
     if(action == 1){
+        Cookies.set('betalen','ja')
+        location.href = "index?serve=betalen"
+    }
+    if(action == 2){
         Cookies.set('Allowed','allowed')
         location.href = "index"
     }
