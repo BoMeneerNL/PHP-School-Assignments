@@ -1,6 +1,4 @@
-<?php
-error_reporting(E_ERROR | E_PARSE);
-?>
+<?php error_reporting(E_ERROR | E_PARSE); ?>
 <?php
 if($_GET['serve'] != "allowcookies"){
     if ($_COOKIE['Allowed'] != "allowed") {
@@ -51,8 +49,8 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "betalen" && !isset($_G
             <option value="Zeeland">Zeeland</option>
             <option value="Noord-Brabant">Noord-Brabant</option>
             <option value="Limburg">Limburg</option>
-    
-            <input type="submit" name="serve" value="betalen">
+            <br/>
+            <input type="submit" name="serve" value="betalen" onclick="executor(1)">
     </form>
 ');
 }
@@ -61,12 +59,11 @@ if($_GET['serve'] == "allowcookies"){
 }
 ?>
 <?php
-if ($_GET['serve'] == "betalen" && $_COOKIE['betalen'] == "ja"){
-    echo('
-        <p>Hello</p>
-    
-    
-    ');
+if($_GET['serve'] != "betalen" && $_COOKIE['betalen'] == "ja"){
+    header("location: index?serve=betalen");
+}
+if ($_GET['serve'] == "betalen" || $_COOKIE['betalen'] == "ja"){
+    include 'scripts/PHP/PHPstatic/besteld.php';
 }
 else if($_GET['serve'] == "betalen" && $_COOKIE['betalen'] != "ja"){
     header("location: index");
