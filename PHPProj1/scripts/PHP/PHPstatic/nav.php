@@ -3,7 +3,7 @@
         <div class=" flex items-center justify-between h-16">
             <div class="flex items-center">
                     <div class="ml-10 flex items-center">
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="executor(0)">afrekenen</a>
+                        <a href="index?serve=gegevens" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">afrekenen</a>
                     </div>
                 </div>
             </div>

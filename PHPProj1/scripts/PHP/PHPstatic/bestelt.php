@@ -1,7 +1,8 @@
 <?php
+include_once '../PHP-BGScripts/vartable.php';
 echo('
-<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed z-10 inset-0 overflow-y-auto mr-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-end justify-center min-h-screen pt-4 px-2 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
@@ -13,25 +14,26 @@ echo('
             </h3>
             <div class="mt-2">
 ');
-if($_COOKIE['prod1' > 0]){
+if($_COOKIE['prod1a'] > 0){
 echo('
-    <figure class="md:flex bg-gray-100 rounded-xl p-8">
+    <figure class="md:flex bg-gray-100 rounded-xl p-8 text-right">
                 <img class="w-24 h-24 rounded-full mx-auto" src="" alt="" width="1" height="1">
                 <div class="pt-6 text-center pr-2 space-y-4">
-                  <figcaption class="font-medium">
+                  <figcaption class="font-medium" style="font-size: smaller">
                     <div class="text-cyan-600">
-                      Sarah Dayan
+                      '. $names[0].'
                     </div>
                     <div class="text-gray-500">
                       Staff Engineer, Algolia
                     </div>
+                    <div class="text-gray-500">
+                    <p>'.($prices[0] * $_COOKIE['prod1a']).'€</p>
+                    <br/>
+                    <p class="italic " style="font-size: xx-small">'.$prices[0].'€ p.s</p>
+                    </div>
                   </figcaption>
                 </div>
               </figure>
-
-
-
-
 ');
 }
 if($_COOKIE['prod2' > 0]){
@@ -41,7 +43,7 @@ if($_COOKIE['prod2' > 0]){
                 <div class="pt-6 text-center pr-2 space-y-4">
                   <figcaption class="font-medium">
                     <div class="text-cyan-600">
-                      Sarah Dayan
+                      '. $product[1].'
                     </div>
                     <div class="text-gray-500">
                       Staff Engineer, Algolia
@@ -52,6 +54,10 @@ if($_COOKIE['prod2' > 0]){
 ');
 }
 echo('
-
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 ')
 ?>

@@ -1,1 +1,1 @@
-function formdatachecker(){}function executor(e){0==e&&(document.getElementById("bestelfinishform").style.display="initial"),1==e&&(Cookies.set("Allowed","allowed"),location.href="index")}
+function formdatachecker(){}function executor(e){0===e?(document.getElementById("item1").style.display="none",document.getElementById("item2").style.display="none"):1===e?(Cookies.set("betalen","ja"),location.href="index"):2===e?(Cookies.set("Allowed","allowed"),location.href="index"):3===e?location.href="index?serve=morecookieinfo":4===e&&(location.href="index")}
