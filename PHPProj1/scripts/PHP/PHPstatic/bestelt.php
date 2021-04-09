@@ -24,9 +24,6 @@ echo('
                       '. $names[0].'
                     </div>
                     <div class="text-gray-500">
-                      Staff Engineer, Algolia
-                    </div>
-                    <div class="text-gray-500">
                     <p>'.($prices[0] * $_COOKIE['prod1a']).'€</p>
                     <br/>
                     <p class="italic " style="font-size: xx-small">'.$prices[0].'€ p.s</p>
@@ -34,30 +31,64 @@ echo('
                   </figcaption>
                 </div>
               </figure>
+              <br/>
 ');
 }
-if($_COOKIE['prod2' > 0]){
+if($_COOKIE['prod2a'] > 0){
     echo('
     <figure class="md:flex bg-gray-100 rounded-xl p-8">
                 <img class="w-24 h-24 rounded-full mx-auto" src="" alt="" width="1" height="1">
                 <div class="pt-6 text-center pr-2 space-y-4">
-                  <figcaption class="font-medium">
+                  <figcaption class="font-medium" style="font-size: smaller">
                     <div class="text-cyan-600">
-                      '. $product[1].'
+                      <p>'. $names[1].'</p>
                     </div>
                     <div class="text-gray-500">
-                      Staff Engineer, Algolia
+                    <p>'.($prices[1] * $_COOKIE['prod2a']).'€</p>
+                    <p>'.$_COOKIE['prod2a'].'x</p>
+                    <br/>
+                    <p class="italic " style="font-size: xx-small">'.$prices[1].'€ p.s</p>
                     </div>
                   </figcaption>
                 </div>
               </figure>
 ');
 }
+if(!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a'])){
+    echo('
+        <p class="text-red-700">er is nog geen product toegevoegt</p>
+        
+    ');
+
+}
 echo('
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+<div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
+                  terug naar producten
+                </button>
+                
+                
+                    
+');
+if(!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a'])){
+$outbtn = '<button id="disabled" disabled style="cursor: not-allowed" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(2)">
+        <span id="hovertext">Het is nog niet mogelijk om afterekenen omdat er nog geen product geselecteerd is</span>
+        afrekenen 
+        </button>';
+}
+else{
+$outbtn = '<button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(5)">
+        afrekenen  
+        </button>';
+}
+echo('
+
+                '.$outbtn.'
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
 ')
 ?>

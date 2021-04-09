@@ -14,7 +14,7 @@ if(isset($_GET['0x0']) || isset($_GET['0x1'])){
         header("location: index");
     }
     else if(isset($_GET['0x1'])){
-        setcookie('prod1a',$_GET['0x1']);
+        setcookie('prod2a',$_GET['0x1']);
         header("location: index");
     }
 
@@ -55,7 +55,7 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
                   </figcaption>
                      <form id ="prod1form">
                         <label>Kies het aantal, het maximale per bestelling is 13</label>
-                          <input type="number" id="quan88tity" name="0x0" min="1" max="13">
+                          <input type="number" id="quan88tity" name="0x0" min="0" max="13" value="0">
                           <input id="prod1btn" type="submit" value="verander">
                      </form>
                 </div>
@@ -74,7 +74,7 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
                   </figcaption>
                     <form id ="prod2form">
                         <label>Kies het aantal, het maximale per bestelling is 20</label>
-                          <input type="number" id="quan88tity" name="0x1" min="1" max="20">
+                          <input type="number" id="000.con" name="0x1" min="1" max="20" value="0">
                           <input id="prod2btn" type="submit" value="verander">
                      </form>
                 </div>
@@ -93,14 +93,8 @@ if($_GET['serve'] == "allowcookies"){
 }
 ?>
 <?php
-if($_GET['serve'] != "betalen" && $_COOKIE['betalen'] == "ja"){
-    header("location: index?serve=betalen");
-}
 if ($_GET['serve'] == "betalen" || $_COOKIE['betalen'] == "ja"){
     include 'scripts/PHP/PHPstatic/bestelt.php';
-}
-else if($_GET['serve'] == "betalen" && $_COOKIE['betalen'] != "ja"){
-    header("location: index");
 }
 ?>
 <?php

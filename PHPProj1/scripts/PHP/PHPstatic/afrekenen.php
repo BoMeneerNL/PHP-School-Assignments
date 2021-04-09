@@ -17,13 +17,29 @@
                   </div>
                 </div>
               </div>
-              <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-              <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(3)">
-                  Meer info
+              <div class="m-5">
+              <form id="gegevens">
+                <label for="provincie">Provincie:</label>
+                    <select id="provincie" name="provincie">
+                        <option value="Drenthe">Drenthe</option>
+                        <option value="Flevoland">Flevoland</option>
+                        <option value="Friesland">Friesland/Fryslân</option>
+                        <option value="Gelderland">Gelderland</option>
+                        <option value="Groningen">Groningen</option>
+                        <option value="Noord-Brabant">Noord-Brabant</option>
+                        <option value="Noord-Holland">Noord-Holland</option>
+                        <option value="Zuid-Holland">Zuid-Holland</option>
+                        <option value="Zeeland">Zeeland</option>
+                        <option value="Noord-Brabant">Noord-Brabant</option>
+                        <option value="Limburg">Limburg</option>
+                    </select>
+                    
+                </form>
+                
+                <button type="submit" form="gegevens" value="gegevens" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(2)">
+                  Toestaan
                 </button>
-                <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(2)">
-                  Afronden
-                </button>
+                </div>
                     </div>
                 </div>
             </div>

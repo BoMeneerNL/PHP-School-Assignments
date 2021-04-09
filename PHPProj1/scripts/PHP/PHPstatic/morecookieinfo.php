@@ -11,7 +11,7 @@ echo('
                                 <div class="mt-2">
                                     <div class="text-sm text-gray-500">
                                         <p>deze website maakt gebruik van cookies, deze cookies worden ENKEL gebruikt om de pagina goed te laten werken, en om de bestelling te kunnen leveren.</p>
-                                        <br/><p>Deze website kan de volgende dingen oplsaan in cookies (enkel als ingevuld):<br/>
+                                        <br/><p>Deze website kan de volgende dingen opslaan in cookies (enkel als ingevuld):<br/>
                                         <br/><p>Postcode</p>
                                         <p>Adres (huisnummer en straatnaam)</p>
                                         <p>en email adres</p>
