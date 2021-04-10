@@ -3,7 +3,7 @@
         <div class=" flex items-center justify-between h-16">
             <div class="flex items-center">
                     <div class="ml-10 flex items-center">
-                        <a href="index?serve=betalen" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">afronden</a>
+                        <button type="submit" form="producten" value="producten"><a href="index?serve=betalen" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">afronden</a></button>
                     </div>
                 </div>
             </div>

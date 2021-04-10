@@ -1,10 +1,12 @@
 <?php
 $getal = 1;
 
+$totaal = 0;
 while($getal <= 10){
-    echo $getal;
-    echo "<br>";
-    $getal++;
+ $totaal = $totaal + $getal;
+ $getal++;
+ echo($totaal);
+ echo('<br/>');
 }
 
 
