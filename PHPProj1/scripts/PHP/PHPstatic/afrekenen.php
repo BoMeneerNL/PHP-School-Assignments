@@ -18,7 +18,7 @@
                 </div>
               </div>
               <div class="m-5">
-              <form id="gegevens">
+              <form id="gegevens" class="py-2">
                 <label for="provincie">Provincie:</label>
                     <select id="provincie" name="provincie">
                         <option value="Drenthe">Drenthe</option>
@@ -32,6 +32,13 @@
                         <option value="Zeeland">Zeeland</option>
                         <option value="Noord-Brabant">Noord-Brabant</option>
                         <option value="Limburg">Limburg</option>
+                    </select>
+                    <br>
+                    <label for="betaalwijze">betaalmothode:</label>
+                    <select id="betaalwijze" name="betaalwijze">
+                        <option value="ideal">iDeal</option>
+                        <option value="bpay">BPay</option>
+                        <option value="paypal">PayPal</option>
                     </select>
                     
                 </form>

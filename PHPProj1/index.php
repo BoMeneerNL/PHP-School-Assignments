@@ -4,7 +4,10 @@
  using random characters to change amounts
  0x0 = "prod1a"
  0x1 = "prod2a"
- */
+ 1x1 = "prod3a"
+ 2x1 = "prod4a"
+
+*/
 if(isset($_GET['0x0']) || isset($_GET['0x1'])){
     if($_GET['serve'] == "gegevens"){
         header("location: index?serve=gegevens");
@@ -15,6 +18,14 @@ if(isset($_GET['0x0']) || isset($_GET['0x1'])){
     }
     else if(isset($_GET['0x1'])){
         setcookie('prod2a',$_GET['0x1']);
+        header("location: index");
+    }
+    else if(isset($_GET['1x1'])){
+        setcookie('prod3a',$_GET['1x1']);
+        header("location: index");
+    }
+    else if(isset($_GET['2x1'])){
+        setcookie('prod4a',$_GET['2x1']);
         header("location: index");
     }
 
@@ -56,7 +67,7 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
                      <form id ="prod1form">
                         <label>Kies het aantal, het maximale per bestelling is 13</label>
                           <input type="number" id="quan88tity" name="0x0" min="0" max="13" value="0">
-                          <input id="prod1btn" type="submit" value="verander">
+                          <input class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" id="prod1btn" type="submit" value="verander">
                      </form>
                 </div>
               </figure>
@@ -74,8 +85,46 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
                   </figcaption>
                     <form id ="prod2form">
                         <label>Kies het aantal, het maximale per bestelling is 20</label>
-                          <input type="number" id="000.con" name="0x1" min="0" max="20" value="0">
-                          <input id="prod2btn" type="submit" value="verander">
+                          <input type="number" id="001.con" name="0x1" min="0" max="20" value="0">
+                          <input class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" id="prod2btn" type="submit" value="verander">
+                     </form>
+                </div>
+              </figure>
+    </div>
+    <div class="itmcase" id="item3">
+        <figure class="bg-gray-100 rounded-xl p-6 h-1/6 w-2/6 mx-10 my-5">
+                <div class="pt-1 right pr-2 space-y-2">
+                  <figcaption class="font-medium">
+                    <div class="text-cyan-600">
+                      '. $names[2] .'
+                    </div>
+                    <div class="text-gray-500">
+                      '.$prices[2].'€ <i>p.s</i>
+                    </div>
+                  </figcaption>
+                    <form id ="prod3form">
+                        <label>Kies het aantal, het maximale per bestelling is 20</label>
+                          <input type="number" id="002.con" name="1x1" min="0" max="20" value="0">
+                          <input class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" id="prod3btn" type="submit" value="verander">
+                     </form>
+                </div>
+              </figure>
+    </div>
+    <div class="itmcase" id="item4">
+        <figure class="bg-gray-100 rounded-xl p-6 h-1/6 w-2/6 mx-10 my-5">
+                <div class="pt-1 right pr-2 space-y-2">
+                  <figcaption class="font-medium">
+                    <div class="text-cyan-600">
+                      '. $names[3] .'
+                    </div>
+                    <div class="text-gray-500">
+                      '.$prices[3].'€ <i>p.s</i>
+                    </div>
+                  </figcaption>
+                    <form id ="prod4form">
+                        <label>Kies het aantal, het maximale per bestelling is 20</label>
+                          <input type="number" id="003.con" name="2x1" min="0" max="20" value="0">
+                          <input class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" id="prod4btn" type="submit" value="verander">
                      </form>
                 </div>
               </figure>
@@ -93,7 +142,7 @@ if($_GET['serve'] == "allowcookies"){
 }
 ?>
 <?php
-if ($_GET['serve'] == "betalen" || $_COOKIE['betalen'] == "ja"){
+if ($_GET['serve'] == "betalen"){
     include 'scripts/PHP/PHPstatic/bestelt.php';
 }
 ?>
