@@ -34,34 +34,74 @@ echo('
               <br/>
 ');
 }
-if($_COOKIE['prod2a'] > 0){
+if($_COOKIE['prod2a'] > 0) {
     echo('
     <figure class="md:flex bg-gray-100 rounded-xl p-8">
                 <img class="w-24 h-24 rounded-full mx-auto" src="" alt="" width="1" height="1">
                 <div class="pt-6 text-center pr-2 space-y-4">
                   <figcaption class="font-medium" style="font-size: smaller">
                     <div class="text-cyan-600">
-                      <p>'. $names[1].'</p>
+                      <p>' . $names[1] . '</p>
                     </div>
                     <div class="text-gray-500">
-                    <p>'.($prices[1] * $_COOKIE['prod2a']).'€</p>
-                    <p>'.$_COOKIE['prod2a'].'x</p>
+                    <p>' . ($prices[1] * $_COOKIE['prod2a']) . '€</p>
+                    <p>' . $_COOKIE['prod2a'] . 'x</p>
                     <br/>
-                    <p class="italic " style="font-size: xx-small">'.$prices[1].'€ p.s</p>
+                    <p class="italic " style="font-size: xx-small">' . $prices[1] . '€ p.s</p>
                     </div>
                   </figcaption>
                 </div>
               </figure>
 ');
-}
-if(!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a'])){
-    echo('
+    if ($_COOKIE['prod3a'] > 0) {
+        echo('
+    <figure class="md:flex bg-gray-100 rounded-xl p-8">
+                <img class="w-24 h-24 rounded-full mx-auto" src="" alt="" width="1" height="1">
+                <div class="pt-6 text-center pr-2 space-y-4">
+                  <figcaption class="font-medium" style="font-size: smaller">
+                    <div class="text-cyan-600">
+                      <p>' . $names[2] . '</p>
+                    </div>
+                    <div class="text-gray-500">
+                    <p>' . ($prices[2] * $_COOKIE['prod3a']) . '€</p>
+                    <p>' . $_COOKIE['prod3a'] . 'x</p>
+                    <br/>
+                    <p class="italic " style="font-size: xx-small">' . $prices[2] . '€ p.s</p>
+                    </div>
+                  </figcaption>
+                </div>
+              </figure>
+');
+    }
+    if ($_COOKIE['prod4a'] > 0) {
+        echo('
+    <figure class="md:flex bg-gray-100 rounded-xl p-8">
+                <img class="w-24 h-24 rounded-full mx-auto" src="" alt="" width="1" height="1">
+                <div class="pt-6 text-center pr-2 space-y-4">
+                  <figcaption class="font-medium" style="font-size: smaller">
+                    <div class="text-cyan-600">
+                      <p>' . $names[3] . '</p>
+                    </div>
+                    <div class="text-gray-500">
+                    <p>' . ($prices[3] * $_COOKIE['prod4a']) . '€</p>
+                    <p>' . $_COOKIE['prod4a'] . 'x</p>
+                    <br/>
+                    <p class="italic " style="font-size: xx-small">' . $prices[3] . '€ p.s</p>
+                    </div>
+                  </figcaption>
+                </div>
+              </figure>
+');
+    }
+if (!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a']) && !isset($_COOKIE['prod3a']) && !isset($_COOKIE['prod4a'])) {
+        echo('
         <p class="text-red-700">er is nog geen product toegevoegt</p>
         
     ');
 
+    }
 }
-echo('
+    echo('
 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
               <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(1)">
                   terug naar producten
@@ -70,12 +110,6 @@ echo('
                 
                     
 ');
-if(!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a'])){
-    $outbtn = '<button id="disabled" disabled style="cursor: not-allowed" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(2)">
-        <span id="hovertext">Het is nog niet mogelijk om afterekenen omdat er nog geen product geselecteerd is</span>
-        afrekenen 
-        </button>';
-}
 if(isset($_COOKIE['prod1a'])){
     if($_COOKIE['prod1a'] <= 0){
         $outbtn = '<button id = disabled style="cursor: zoom-in;" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
@@ -90,10 +124,38 @@ if(isset($_COOKIE['prod1a'])){
     }
 
 }
-else if(isset($_COOKIEprod2a)){
+else if(isset($_COOKIE['prod2a'])){
     if($_COOKIE['prod2a'] <= 0){
         $outbtn = '<button id="disabled" style="cursor: zoom-in;" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
-        <span id="hovertext">Het is nog niet mogelijk om afterekenen omdat er nog geen product geselecteerd is</span>
+        <span id="hovertext">een van de aantalen van de producten zijn 0</span>
+        afrekenen 
+        </button>';
+    }
+    else {
+        $outbtn = '<button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
+        afrekenen  
+        </button>';
+    }
+
+}
+else if(isset($_COOKIE['prod3a'])){
+    if($_COOKIE['prod3a'] <= 0){
+        $outbtn = '<button id="disabled" style="cursor: zoom-in;" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
+        <span id="hovertext">een van de aantalen van de producten zijn 0</span>
+        afrekenen 
+        </button>';
+    }
+    else {
+        $outbtn = '<button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
+        afrekenen  
+        </button>';
+    }
+
+}
+else if(isset($_COOKIE['prod4a'])){
+    if($_COOKIE['prod4a'] <= 0){
+        $outbtn = '<button id="disabled" style="cursor: zoom-in;" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(4)">
+        <span id="hovertext">een van de aantalen van de producten zijn 0</span>
         afrekenen 
         </button>';
     }

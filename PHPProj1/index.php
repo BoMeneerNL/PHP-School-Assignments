@@ -1,14 +1,14 @@
 <?php error_reporting(E_ERROR | E_PARSE); ?>
 <?php
 /*
- using random characters to change amounts
+ using random characters to change amounts of products
  0x0 = "prod1a"
  0x1 = "prod2a"
  1x1 = "prod3a"
  2x1 = "prod4a"
 
 */
-if(isset($_GET['0x0']) || isset($_GET['0x1'])){
+if(isset($_GET['0x0']) || isset($_GET['0x1']) || isset($_GET['1x1']) || isset($_GET['2x1'])){
     if($_GET['serve'] == "gegevens"){
         header("location: index?serve=gegevens");
     }
@@ -130,6 +130,9 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
               </figure>
     </div>
 ');
+}
+if($_COOKIE['serve'] == "end"){
+    include_once "scripts/PHP/PHPstatic/afsluiting.php";
 }
 if($_GET['serve'] == "gegevens"){
     include_once "scripts/PHP/PHPstatic/afrekenen.php";

@@ -33,18 +33,27 @@
                         <option value="Noord-Brabant">Noord-Brabant</option>
                         <option value="Limburg">Limburg</option>
                     </select>
-                    <br>
+                    <br/>
+                    <label for="woonplaats">Woonplaats:</label>
+                    <input type="text" id="woonplaats" name="woonplaats" placeholder="woonplaats">
+                    <br/>
+                    <label for="postcode">postcode:</label>
+                    <input type="text" id="postcode" name="postcode" minlength="6" maxlength="6">
+                    <br/>
+                    <label for="huisnummer">huisnummer:</label>
+                    <input type="number" id="huisnummer" name="huisnummer">
+                    <br/>
                     <label for="betaalwijze">betaalmothode:</label>
                     <select id="betaalwijze" name="betaalwijze">
-                        <option value="ideal">iDeal</option>
-                        <option value="bpay">BPay</option>
+                        <option value="iDeal">iDeal</option>
+                        <option value="BPay">BPay</option>
                         <option value="paypal">PayPal</option>
                     </select>
                     
                 </form>
                 
-                <button type="submit" form="gegevens" value="gegevens" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(2)">
-                  Toestaan
+                <button type="submit" form="gegevens" value="gegevens" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(5)">
+                  betalen
                 </button>
                 </div>
                     </div>
