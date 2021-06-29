@@ -1,13 +1,11 @@
 <?php
-$exitnode = "F";
-
 function oddeven($num)
 {
     $icall = $num;
     if($icall%2){
     $num = 0;
     }
-    else{$num == 1;}
+    else{$num = 1;}
 
     if($num == 0){
         $exitnode = "Oneven";
@@ -18,15 +16,5 @@ function oddeven($num)
         return $exitnode;
     }
 }
-echo "het getal is: " . oddeven(5);
-echo "<br>";
-echo "het getal is: " . oddeven(6);
-echo "<br>";
-echo "het getal is: " . oddeven(7);
-echo "<br>";
-echo "het getal is: " . oddeven(8);
-echo "<br>";
-echo "het getal is: " . oddeven(9);
-echo "<br>";
-echo "het getal is: " . oddeven(10);
-?>
+$text = "<br> het getal is:";
+echo $text . oddeven(5) . $text . oddeven(6) . $text . oddeven(7) . $text . oddeven(8) . $text . oddeven(9). $text . oddeven(10);

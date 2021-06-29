@@ -13,4 +13,3 @@ else if ($verschil <= 500 && $verschil > 0){
 else{
     echo "Kopen maar! Je hebt nog over: " .  $verschil;
 }
-?>

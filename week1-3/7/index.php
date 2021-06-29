@@ -5,6 +5,4 @@ $Catologus = array(
     $Stonks = array(10.00,3.70,9001,10),
     $stoncked = array(100,9001,3,5000)
 );
-
-print_r($Catologus)
-?>
+print_r($Catologus);

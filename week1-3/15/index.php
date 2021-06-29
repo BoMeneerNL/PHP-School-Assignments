@@ -1,8 +1,6 @@
 <?php
-$exitnode = "F";
 function btw($kosten,$btwtype)
 {
-    $einde = "F, Something went wrong, no start signal, oops";
     if ($btwtype == "Hoog"){
         $eindcijfer = $kosten * 1.21;
         $einde = "het bedrag incl. hoge btw is " . $eindcijfer;
@@ -14,7 +12,5 @@ function btw($kosten,$btwtype)
         return $einde;
     }
 }
-echo btw(13,"Laag");
-echo "<br>";
-echo btw(13,"Hoog");
+echo btw(13,"Laag") . "<br>". btw(13,"Hoog");
 ?>

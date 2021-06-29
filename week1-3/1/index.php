@@ -1,10 +1,5 @@
 <?php
-$breedte = 10;
-$lengte= 11;
-$hoogte = 5;
-$Containeroppervlakte = $breedte * $lengte ;
-$ContainerVolume = $breedte * $hoogte * $lengte;
-    echo $Containeroppervlakte; //110
-    echo "\n";
-    echo $ContainerVolume; //550
-?>
+$dimensies = [10,11,5];
+$Containeroppervlakte = $dimensies[0] * $dimensies[1] ;
+$ContainerVolume = $Containeroppervlakte * $dimensies[2];
+    echo $Containeroppervlakte . "\r\n" . $ContainerVolume;
