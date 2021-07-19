@@ -131,25 +131,17 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
     </div>
 ');
 }
-if($_COOKIE['serve'] == "end"){
-    include_once "scripts/PHP/PHPstatic/afsluiting.php";
-}
-if($_GET['serve'] == "gegevens"){
-    include_once "scripts/PHP/PHPstatic/afrekenen.php";
-}
-if($_GET['serve'] == "morecookieinfo"){
-    require_once 'scripts/PHP/PHPstatic/morecookieinfo.php';
-}
-if($_GET['serve'] == "allowcookies"){
-    include "scripts/PHP/PHPstatic/acceptmycookies.php";
-}
-?>
-<?php
+match ($_COOKIE['serve']){
+    "end" => include_once "scripts/PHP/PHPstatic/afsluiting.php",
+    "gegevens" => include_once "scripts/PHP/PHPstatic/afrekenen.php",
+    "morecookieinfo" => require_once 'scripts/PHP/PHPstatic/morecookieinfo.php',
+    "allowcookies" => include_once "scripts/PHP/PHPstatic/acceptmycookies.php"
+};
+
 if ($_GET['serve'] == "betalen"){
     include 'scripts/PHP/PHPstatic/bestelt.php';
 }
-?>
-<?php
+
 if($_GET['serve'] != "allowcookies") {
     if (http_response_code() != 400) {
         include_once 'scripts/PHP/PHPstatic/footer.php';
