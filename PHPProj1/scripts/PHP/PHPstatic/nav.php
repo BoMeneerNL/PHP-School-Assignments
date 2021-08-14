@@ -1,3 +1,4 @@
+<?php
 echo('
 <nav class="bg-gray-400 dark:bg-gray-800">
     <div class=" px-4 sm:px-6 lg:px-8">
@@ -11,4 +12,4 @@ echo('
         </div>
     </div>
 </nav>
-')
+');

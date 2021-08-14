@@ -31,9 +31,7 @@ if(isset($_GET['0x0']) || isset($_GET['0x1']) || isset($_GET['1x1']) || isset($_
 
 }
 if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "morecookieinfo"){
-    if ($_COOKIE['Allowed'] != "allowed") {
-        header("location: index?serve=allowcookies");
-    }
+    if ($_COOKIE['Allowed'] != "allowed") header("location: index?serve=allowcookies");
 }
 if(isset($_GET['provincie']) && isset($_GET['straatnaam'])) {
     setcookie("provincie",$_GET['provincie']);
@@ -41,12 +39,9 @@ if(isset($_GET['provincie']) && isset($_GET['straatnaam'])) {
 }
 include 'scripts/PHP/PHP-BGScripts/vartable.php';
 include_once 'scripts/PHP/PHPstatic/header.php';
-    if (!empty($title) && $_GET['serve'] != "allowcookies") {
-        echo "<title>" . $title . "</title>";
-    }
-    if ($_GET['serve'] != "allowcookies" || $_GET['serve'] != "betalen"){
-        include_once 'scripts/PHP/PHPstatic/nav.php';
-}
+    if (!empty($title) && $_GET['serve'] != "allowcookies") echo "<title>" . $title . "</title>";
+
+    if ($_GET['serve'] != "allowcookies" || $_GET['serve'] != "betalen") include_once 'scripts/PHP/PHPstatic/nav.php';
 
 ?>
 <?php
@@ -138,14 +133,9 @@ match ($_COOKIE['serve']){
     "allowcookies" => include_once "scripts/PHP/PHPstatic/acceptmycookies.php"
 };
 
-if ($_GET['serve'] == "betalen"){
-    include 'scripts/PHP/PHPstatic/bestelt.php';
-}
+if ($_GET['serve'] == "betalen") include 'scripts/PHP/PHPstatic/bestelt.php';
 
-if($_GET['serve'] != "allowcookies") {
-    if (http_response_code() != 400) {
-        include_once 'scripts/PHP/PHPstatic/footer.php';
-    }
-}
+if($_GET['serve'] != "allowcookies") if (http_response_code() != 400) include_once 'scripts/PHP/PHPstatic/footer.php';
+
 include_once  'scripts/PHP/PHPstatic/scriptimport.php';
 ?>

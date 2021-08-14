@@ -2,8 +2,7 @@
 $gegevens = ["bo","a","Straatenstraat","1","6660AA","Gelderland","Nederland"];
 
 function getupper($input){
-    $string = ucfirst($input);
-    return $string;
+    return ucfirst($input);
 }
 $euros = 999.99;
 $koers = 1.2;

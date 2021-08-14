@@ -94,21 +94,14 @@ if($_COOKIE['prod2a'] > 0) {
 ');
     }
 if (!isset($_COOKIE['prod1a']) && !isset($_COOKIE['prod2a']) && !isset($_COOKIE['prod3a']) && !isset($_COOKIE['prod4a'])) {
-        echo('
-        <p class="text-red-700">er is nog geen product toegevoegt</p>
-        
-    ');
-
+        echo '<p class="text-red-700">er is nog geen product toegevoegt</p> ';
     }
 }
     echo('
 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
               <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="executor(1)">
                   terug naar producten
-                </button>
-                
-                
-                    
+                </button>             
 ');
 if(isset($_COOKIE['prod1a'])){
     if($_COOKIE['prod1a'] <= 0){
@@ -167,7 +160,6 @@ else if(isset($_COOKIE['prod4a'])){
 
 }
 echo('
-
                 '.$outbtn.'
                 </div>
                 </div>

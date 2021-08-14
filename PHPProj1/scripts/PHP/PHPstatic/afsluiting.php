@@ -1,9 +1,10 @@
 <?php
 include_once "../PHP-BGScripts/vartable.php";
-if(!isset($_COOKIE['prod1a']) || $_COOKIE['prod1a'] < 0){$prod1a = 0;}else{$prod1a = $_COOKIE['prod1a'];}
-if(!isset($_COOKIE['prod2a']) || $_COOKIE['prod2a'] < 0){$prod2a = 0;}else{$prod1a = $_COOKIE['prod2a'];}
-if(!isset($_COOKIE['prod3a']) || $_COOKIE['prod3a'] < 0){$prod3a = 0;}else{$prod1a = $_COOKIE['prod3a'];}
-if(!isset($_COOKIE['prod4a']) || $_COOKIE['prod4a'] < 0){$prod4a = 0;}else{$prod1a = $_COOKIE['prod4a'];}
+$prod1a = isset($_COOKIE['prod1a']) && $_COOKIE['prod1a'] ? $_COOKIE['prod1a'] : 0;
+$prod2a = isset($_COOKIE['prod2a']) && $_COOKIE['prod2a'] ? $_COOKIE['prod2a'] : 0;
+$prod3a = isset($_COOKIE['prod3a']) && $_COOKIE['prod3a'] ? $_COOKIE['prod3a'] : 0;
+$prod4a = isset($_COOKIE['prod4a']) && $_COOKIE['prod4a'] ? $_COOKIE['prod4a'] : 0;
+
 echo('
  <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -39,4 +40,3 @@ echo('
             </div>
         </div>
     ');
-?>
