@@ -126,8 +126,10 @@ if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "gegevens" && $_COOKIE[
     </div>
 ');
 }
-match ($_COOKIE['serve']){
-    "end" => include_once "scripts/PHP/PHPstatic/afsluiting.php",
+if($_COOKIE['serve'] == "end"){
+    include_once "scripts/PHP/PHPstatic/afsluiting.php";
+}
+match ($_GET['serve']){
     "gegevens" => include_once "scripts/PHP/PHPstatic/afrekenen.php",
     "morecookieinfo" => require_once 'scripts/PHP/PHPstatic/morecookieinfo.php',
     "allowcookies" => include_once "scripts/PHP/PHPstatic/acceptmycookies.php"
