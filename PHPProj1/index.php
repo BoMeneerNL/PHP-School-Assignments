@@ -8,7 +8,6 @@
  2x1 = "prod4a"
 
 */
-if(isset($_GET['0x0']) || isset($_GET['0x1']) || isset($_GET['1x1']) || isset($_GET['2x1'])){
     if($_GET['serve'] == "gegevens"){
         header("location: index?serve=gegevens");
     }
@@ -29,7 +28,6 @@ if(isset($_GET['0x0']) || isset($_GET['0x1']) || isset($_GET['1x1']) || isset($_
         header("location: index");
     }
 
-}
 if($_GET['serve'] != "allowcookies" && $_GET['serve'] != "morecookieinfo"){
     if ($_COOKIE['Allowed'] != "allowed") header("location: index?serve=allowcookies");
 }

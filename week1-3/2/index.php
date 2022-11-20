@@ -1,7 +1,8 @@
 <?php
 $gegevens = ["bo","a","Straatenstraat","1","6660AA","Gelderland","Nederland"];
 
-function getupper($input){
+function getupper($input): string
+{
     return ucfirst($input);
 }
 $euros = 999.99;
